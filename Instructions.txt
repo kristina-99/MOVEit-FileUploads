@@ -1,0 +1,15 @@
+In order to send POST requests to the MOVEit Transfer Web App, I have used the curl library for C++. In order to run the solution after downloading it from GitHub, please follow the steps below:
+
+1. After opening the project in Visual Studio, go to project properties and change the include directory for libcurl in C/C++/General
+2. In Linker/General change the Library directory to your local one
+3. In Linker/Input Additional dependencies make sure that the lib file has the same name as your local lib file(currently it's set to "licurl_a.lib")
+
+
+After running the solution:
+1. After running the solution you will be asked to enter your username and password
+2. After that you will be asked to specify the directory of the file you would like to upload to your home directory. Please use the following format to specify the path(double slash):
+C:\\Users\\someTxt.txt
+3. You will be shown the ID of your homeFolder. This is done to show that the id is successfully extracted.
+4. As the account I was given is a test account it doesn't have the permission to proceed with the file upload, I get the following message:
+"Authorization has been denied for this request", so please make sure to test the program with an authorized account to upload the file.
+5. I have added a separate function getLocalFiles() that can be used to iterate through a local folder and get all the local files which need to be uploaded.
